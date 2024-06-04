@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="contact-form__container">
+        <form class="contact-form" id="form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <!-- Replace with your Access Key -->
+            <input type="hidden" name="access_key" value="f09c2492-4e63-4029-a996-3ce6a8132540" />
+
+            <h2 class="contact-form__title">Contact Us</h2>
+            <div class="contact-form__content">
+                <div class="contact-form__group contact-form__group--border">
+                    <label for="first-name">First Name <sup>*</sup></label>
+                    <input type="text" id="first-name" name="first_name" />
+                </div>
+                <div class="contact-form__group contact-form__group--border">
+                    <label for="last-name">Last Name <sup>*</sup></label>
+                    <input type="text" id="last-name" name="last_name" />
+                </div>
+            </div>
+            <div class="contact-form__group contact-form__group--border">
+                <label for="email">Email <sup>*</sup></label>
+                <input type="email" id="email" name="email" />
+                <span id="letter"></span>
+            </div>
+            <p class="contact-form__content_header">Query Type <sup>*</sup></p>
+            <div class="contact-form__content contact-form__content--checkbox">
+                <div class="contact-form__group contact-form__group--checkbox">
+                    <input type="radio" id="general" name="enquiry_type" value="general" />
+                    <label for="general" class="contact-form__label" id="first_check">General Enquiry</label><br />
+                </div>
+                <div class="contact-form__group contact-form__group--checkbox">
+                    <input type="radio" id="support" name="enquiry_type" value="support" />
+                    <label for="support" class="contact-form__label" id="second_check">Support Request</label>
+                </div>
+            </div>
+            <div class="contact-form__group contact-form__group--message contact-form__group--border">
+                <label for="message">Message <sup>*</sup></label>
+                <textarea id="message" name="message" rows="6" cols="30"></textarea>
+            </div>
+            <div class="contact-form__group contact-form__group--checkbox contact-form__group--last">
+                <input type="checkbox" id="allow" name="consent" value="accept" />
+                <label for="allow">I consent to being contacted by the team <sup>*</sup></label><br />
+            </div>
+
+            <!-- hCaptcha Spam Protection -->
+            <div class="h-captcha" data-sitekey="your-hcaptcha-site-key"></div>
+            <button type="submit" class="contact-form__submit">Submit</button>
+            <div id="result"></div>
+        </form>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
