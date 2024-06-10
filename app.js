@@ -45,11 +45,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const lastName = document.getElementById("last-name");
   const email = document.getElementById("email");
   const message = document.getElementById("message");
-  const consent = document.getElementById("allow");
+  const consent = document.getElementById("allow-text");
+  const allow = document.getElementById("allow");
   const first_check = document.getElementById("general");
   const second_check = document.getElementById("support");
-  const last_check = document.getElementById("allow");
-  const letter = document.getElementById("letter");
+
+
 
   const first_check_block = document.getElementById("first_check");
   const second_check_block = document.getElementById("second_check");
@@ -67,7 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
     message.classList.remove("invalid");
   });
   
-
   first_check.addEventListener("change", () => {
     first_check_block.classList.remove("invalid");
     second_check_block.classList.remove("invalid");
@@ -78,9 +78,11 @@ document.addEventListener("DOMContentLoaded", function () {
     second_check_block.classList.remove("invalid");
   });
 
-  last_check.addEventListener("input", () => {
-    last_check.classList.remove("invalid");
-  });
+  allow.addEventListener('change', () => {
+    if(allow.checked){
+      consent.classList.remove("invalid-color");
+    }
+  })
 
   function validateForm() {
     let isValid = true;
@@ -105,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
       isValid = false;
     }
     if (!consent.checked) {
-      consent.classList.add("invalid");
+      consent.classList.add("invalid-color");
       isValid = false;
     }
     if (!first_check.checked && !second_check.checked) {
@@ -113,9 +115,9 @@ document.addEventListener("DOMContentLoaded", function () {
       second_check_block.classList.add("invalid");
       isValid = false;
     }
-    if (!last_check.checked) {
-      last_check.classList.add("invalid");
-      isValid = false;
+
+    if(allow.checked){
+      console.log('test');
     }
 
     return isValid;

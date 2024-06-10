@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="https://img.lovepik.com/png/20231006/Contact-us-for-the-Cartoon-Service-Label-services-contact-icon_100728_wh1200.png">
 </head>
 
 <body>
     <div class="contact-form__container">
-        <form class="contact-form" id="form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <form autocomplete="off" class="contact-form" id="form" action="https://api.web3forms.com/submit" method="POST" novalidate>
             <!-- Replace with your Access Key -->
             <input type="hidden" name="access_key" value="f09c2492-4e63-4029-a996-3ce6a8132540" />
 
@@ -47,7 +48,7 @@
             </div>
             <div class="contact-form__group contact-form__group--checkbox contact-form__group--last">
                 <input type="checkbox" id="allow" name="consent" value="accept" />
-                <label for="allow">I consent to being contacted by the team <sup>*</sup></label><br />
+                <label for="allow" id="allow-text">I consent to being contacted by the team <sup>*</sup></label><br />
             </div>
 
             <!-- hCaptcha Spam Protection -->
